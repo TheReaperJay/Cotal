@@ -59,7 +59,7 @@ jobs:
         # gated here AND in `pnpm check` deliberately: CLI smoke files are outside package typecheck, so
         # a dynamic `await import()` boundary regression in a live smoke escapes tsc — only running it catches it.
         # nats-server installed above.
-        run: pnpm smoke:core-boundary && pnpm smoke:preflight && pnpm smoke:server-resolution:live && pnpm smoke:spawn-from-anywhere:live
+        run: pnpm smoke:core-boundary && pnpm smoke:preflight && pnpm smoke:server-resolution:live && pnpm smoke:spawn-from-anywhere:live && pnpm smoke:spawn-detach:live
 
       - name: Runtime smoke tests (tmux)
         # Exercises the tmux Runtime + TerminalLayout end to end (driver, lifecycle by stable
